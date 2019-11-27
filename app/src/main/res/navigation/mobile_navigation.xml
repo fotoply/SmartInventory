@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_contents"
         android:name="dk.sdu.student.kitcheninventory.ui.contents.ContentFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_contents"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_checkin"
         android:name="dk.sdu.student.kitcheninventory.ui.checkin.CheckInFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_checkin"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_recipes"
+        android:name="dk.sdu.student.kitcheninventory.ui.recipes.RecipesFragment"
+        android:label="@string/title_recipes"
+        tools:layout="@layout/fragment_recipes" />
+
+    <fragment
+        android:id="@+id/navigation_shopping"
+        android:name="dk.sdu.student.kitcheninventory.ui.shopping.ShoppingFragment"
+        android:label="@string/title_shopping"
+        tools:layout="@layout/fragment_shopping" />
 </navigation>
