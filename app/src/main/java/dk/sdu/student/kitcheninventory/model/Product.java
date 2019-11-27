@@ -2,6 +2,8 @@ package dk.sdu.student.kitcheninventory.model;
 
 import android.media.Image;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -86,6 +88,7 @@ public class Product implements Serializable {
     }
 
     @Override
+    @NonNull
     public String toString() {
         return amount + "x " + name + " - Udløber " + getFormattedExpiration();
     }
