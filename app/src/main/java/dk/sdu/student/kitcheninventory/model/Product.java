@@ -10,6 +10,38 @@ import java.util.concurrent.TimeUnit;
 
 public class Product implements Serializable {
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Image getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Image photo) {
+        this.photo = photo;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
     private String name;
     private Image photo;
     private Category category;
@@ -24,11 +56,15 @@ public class Product implements Serializable {
         this.amount = template.getAmount();
     }
 
-    private void setExpirationInDays(int expirationTime) {
+    public void setExpirationInDays(int expirationTime) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.add(Calendar.DATE, expirationTime);
         this.expirationDate = new Date(cal.getTimeInMillis());
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     public String getFormattedExpiration() {
@@ -51,13 +87,17 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return amount + "x " + name + " - " + getFormattedExpiration();
+        return amount + "x " + name + " - Udløber " + getFormattedExpiration();
     }
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(DefaultTemplates.search("Let").toArray()));
         System.out.println(Arrays.toString(DefaultTemplates.search("let").toArray()));
         System.out.println(Arrays.toString(DefaultTemplates.search("mælk").toArray()));
+
+        Product test = new Product();
+        test.applyTemplate(DefaultTemplates.search("let").get(0));
+        System.out.println(test);
 
     }
 }
