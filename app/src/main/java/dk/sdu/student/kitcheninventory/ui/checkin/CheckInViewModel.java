@@ -1,16 +1,16 @@
-package dk.sdu.student.kitcheninventory.ui.notifications;
+package dk.sdu.student.kitcheninventory.ui.checkin;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class CheckInViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public CheckInViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("Dette er tjek in fragment");
     }
 
     public LiveData<String> getText() {

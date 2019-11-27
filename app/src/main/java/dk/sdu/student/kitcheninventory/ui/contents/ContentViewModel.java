@@ -1,16 +1,16 @@
-package dk.sdu.student.kitcheninventory.ui.home;
+package dk.sdu.student.kitcheninventory.ui.contents;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class ContentViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public ContentViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Dette er hjem fragment");
+        mText.setValue("Dette er beholdnings fragment");
     }
 
     public LiveData<String> getText() {
