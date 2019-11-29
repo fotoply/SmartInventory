@@ -21,7 +21,7 @@
         android:id="@+id/navigation_checkin"
         android:name="dk.sdu.student.kitcheninventory.ui.checkin.CheckInFragment"
         android:label="@string/title_checkin"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_checkin" />
 
     <fragment
         android:id="@+id/navigation_recipes"

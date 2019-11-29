@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.model;
+package dk.sdu.student.kitcheninventory.model.inventory;
 
 import java.io.Serializable;
 
@@ -9,12 +9,22 @@ public class ProductTemplate implements Serializable {
     private Category category;
     private double expirationTime;
     private double amount;
+    private String barcode;
+
+    public String getBarcode() {
+        return barcode;
+    }
 
     public ProductTemplate(String name, Category category, double expirationTime, double amount) {
+        this(name, category, expirationTime, amount, "");
+    }
+
+    public ProductTemplate(String name, Category category, double expirationTime, double amount, String barcode) {
         this.name = name;
         this.category = category;
         this.expirationTime = expirationTime;
         this.amount = amount;
+        this.barcode = barcode;
     }
 
     public String getName() {

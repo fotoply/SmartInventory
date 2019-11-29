@@ -1,7 +1,8 @@
-package dk.sdu.student.kitcheninventory.model;
+package dk.sdu.student.kitcheninventory.model.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class DefaultTemplates {
@@ -25,5 +26,12 @@ public class DefaultTemplates {
                 .filter(defaultTemplates1 -> defaultTemplates1.getName().toLowerCase().contains(searchString.toLowerCase()))
                 .limit(limit)
                 .collect(Collectors.toList());
+    }
+
+    public static ProductTemplate getByBarcode(String barcode) {
+        Optional<ProductTemplate> barcodeResult = defaultTemplates.stream()
+                .filter(productTemplate -> productTemplate.getBarcode().equals(barcode))
+                .findFirst();
+        return barcodeResult.orElse(null);
     }
 }

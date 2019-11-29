@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.model;
+package dk.sdu.student.kitcheninventory.model.inventory;
 
 import android.media.Image;
 
