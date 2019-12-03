@@ -81,7 +81,7 @@ public class Product implements Serializable {
         }
     }
 
-    private long getDaysUntilExpiration() {
+    public long getDaysUntilExpiration() {
         Date today = new Date();
         today.setHours(0);
         return TimeUnit.DAYS.convert(expirationDate.getTime() - today.getTime(), TimeUnit.MILLISECONDS);

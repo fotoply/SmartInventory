@@ -42,7 +42,8 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
 
     @Override
     public void onScanned(Barcode barcode) {
-
+        CheckInAddProduct  addProduct = CheckInAddProduct.newInstance(barcode.displayValue, barcode.rawValue);
+        addProduct.show(getFragmentManager(), "fragment_add_product");
     }
 
     @Override

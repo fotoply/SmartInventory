@@ -12,4 +12,8 @@ public class StorageCompartment {
         this.name = name;
         products = new ArrayList<>();
     }
+
+    public String getName() {
+        return name;
+    }
 }

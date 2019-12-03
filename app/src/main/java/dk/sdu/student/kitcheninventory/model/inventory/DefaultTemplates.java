@@ -14,6 +14,7 @@ public class DefaultTemplates {
         defaultTemplates.add(new ProductTemplate("1L Sødmælk", new Category(), 7, 1.0));
         defaultTemplates.add(new ProductTemplate("1L Skummemælk", new Category(), 7, 1.0));
         defaultTemplates.add(new ProductTemplate("Havregryn", new Category(), 28, 1.0));
+        defaultTemplates.add(new ProductTemplate("Vitamin Well Prepare", new Category(), 90, 1.0, "7350042717743"));
 
     }
 
