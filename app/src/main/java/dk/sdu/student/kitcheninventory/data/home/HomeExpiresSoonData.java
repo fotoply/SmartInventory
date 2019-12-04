@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.ui.inventory;
+package dk.sdu.student.kitcheninventory.data.home;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,52 +6,52 @@ import java.util.List;
 import dk.sdu.student.kitcheninventory.model.inventory.Product;
 import dk.sdu.student.kitcheninventory.model.recipes.Ingredient;
 
-public class InventoryRecyclerViewDataVegetables
+public class HomeExpiresSoonData
 {
     public static List<Ingredient> GetData()
     {
         String[] names =
                 {
-                        "Avocados",
-                        "Beets",
-                        "Bell peppers",
-                        "Broccoli",
-                        "Cabbage",
-                        "Carrots",
-                        "Cauliflower",
-                        "Celery",
-                        "Cucumbers",
-                        "Garlic",
-                        "Avocados",
-                        "Beets",
-                        "Bell peppers",
-                        "Broccoli",
-                        "Cabbage",
-                        "Carrots",
-                        "Cauliflower",
-                        "Celery",
-                        "Cucumbers",
-                        "Garlic",
-                        "Avocados",
-                        "Beets",
-                        "Bell peppers",
-                        "Broccoli",
-                        "Cabbage",
-                        "Carrots",
-                        "Cauliflower",
-                        "Celery",
-                        "Cucumbers",
-                        "Garlic",
-                        "Avocados",
-                        "Beets",
-                        "Bell peppers",
-                        "Broccoli",
-                        "Cabbage",
-                        "Carrots",
-                        "Cauliflower",
-                        "Celery",
-                        "Cucumbers",
-                        "Garlic"
+                        "Pie",
+                        "Cake",
+                        "Brownies",
+                        "Smoothie",
+                        "Salad",
+                        "Spaghetti Bolognese",
+                        "Chili Con Carne",
+                        "Oatmeal",
+                        "Pizza",
+                        "Lasagne",
+                        "Pie",
+                        "Cake",
+                        "Brownies",
+                        "Smoothie",
+                        "Salad",
+                        "Spaghetti Bolognese",
+                        "Chili Con Carne",
+                        "Oatmeal",
+                        "Pizza",
+                        "Lasagne",
+                        "Pie",
+                        "Cake",
+                        "Brownies",
+                        "Smoothie",
+                        "Salad",
+                        "Spaghetti Bolognese",
+                        "Chili Con Carne",
+                        "Oatmeal",
+                        "Pizza",
+                        "Lasagne",
+                        "Pie",
+                        "Cake",
+                        "Brownies",
+                        "Smoothie",
+                        "Salad",
+                        "Spaghetti Bolognese",
+                        "Chili Con Carne",
+                        "Oatmeal",
+                        "Pizza",
+                        "Lasagne"
                 };
 
         String[] years =

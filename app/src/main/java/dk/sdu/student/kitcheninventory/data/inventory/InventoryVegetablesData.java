@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.ui.inventory;
+package dk.sdu.student.kitcheninventory.data.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,52 +6,52 @@ import java.util.List;
 import dk.sdu.student.kitcheninventory.model.inventory.Product;
 import dk.sdu.student.kitcheninventory.model.recipes.Ingredient;
 
-public class InventoryRecyclerViewDataMeats
+public class InventoryVegetablesData
 {
     public static List<Ingredient> GetData()
     {
         String[] names =
                 {
-                        "Chicken",
-                        "Beef",
-                        "Lamb",
-                        "Turkey",
-                        "Salmon",
-                        "Sardines",
-                        "Shrimps",
-                        "Tuna",
-                        "Roastbeef",
-                        "Ham",
-                        "Chicken",
-                        "Beef",
-                        "Lamb",
-                        "Turkey",
-                        "Salmon",
-                        "Sardines",
-                        "Shrimps",
-                        "Tuna",
-                        "Roastbeef",
-                        "Ham",
-                        "Chicken",
-                        "Beef",
-                        "Lamb",
-                        "Turkey",
-                        "Salmon",
-                        "Sardines",
-                        "Shrimps",
-                        "Tuna",
-                        "Roastbeef",
-                        "Ham",
-                        "Chicken",
-                        "Beef",
-                        "Lamb",
-                        "Turkey",
-                        "Salmon",
-                        "Sardines",
-                        "Shrimps",
-                        "Tuna",
-                        "Roastbeef",
-                        "Ham"
+                        "Avocados",
+                        "Beets",
+                        "Bell peppers",
+                        "Broccoli",
+                        "Cabbage",
+                        "Carrots",
+                        "Cauliflower",
+                        "Celery",
+                        "Cucumbers",
+                        "Garlic",
+                        "Avocados",
+                        "Beets",
+                        "Bell peppers",
+                        "Broccoli",
+                        "Cabbage",
+                        "Carrots",
+                        "Cauliflower",
+                        "Celery",
+                        "Cucumbers",
+                        "Garlic",
+                        "Avocados",
+                        "Beets",
+                        "Bell peppers",
+                        "Broccoli",
+                        "Cabbage",
+                        "Carrots",
+                        "Cauliflower",
+                        "Celery",
+                        "Cucumbers",
+                        "Garlic",
+                        "Avocados",
+                        "Beets",
+                        "Bell peppers",
+                        "Broccoli",
+                        "Cabbage",
+                        "Carrots",
+                        "Cauliflower",
+                        "Celery",
+                        "Cucumbers",
+                        "Garlic"
                 };
 
         String[] years =

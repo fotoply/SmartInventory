@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
+import dk.sdu.student.kitcheninventory.data.shopping.ShoppingGroceryListData;
 import dk.sdu.student.kitcheninventory.ui.recipes.RecipesRecyclerViewAdapter;
 
 public class ShoppingFragment extends Fragment
@@ -26,7 +27,7 @@ public class ShoppingFragment extends Fragment
         View root = inflater.inflate(R.layout.fragment_shopping, container, false);
 
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), ShoppingRecyclerViewData.GetData()));
+        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), ShoppingGroceryListData.GetData()));
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
         return root;

@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.ui.shopping;
+package dk.sdu.student.kitcheninventory.data.shopping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import dk.sdu.student.kitcheninventory.model.inventory.Product;
 import dk.sdu.student.kitcheninventory.model.recipes.Ingredient;
 
-public class ShoppingRecyclerViewData
+public class ShoppingGroceryListData
 {
     public static List<Ingredient> GetData()
     {

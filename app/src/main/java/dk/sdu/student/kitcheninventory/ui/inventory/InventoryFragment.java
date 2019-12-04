@@ -11,6 +11,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
+import dk.sdu.student.kitcheninventory.data.inventory.InventoryBeveragesData;
+import dk.sdu.student.kitcheninventory.data.inventory.InventoryFruitsData;
+import dk.sdu.student.kitcheninventory.data.inventory.InventoryMeatsData;
+import dk.sdu.student.kitcheninventory.data.inventory.InventoryVegetablesData;
 import dk.sdu.student.kitcheninventory.ui.recipes.RecipesRecyclerViewAdapter;
 
 public class InventoryFragment extends Fragment
@@ -26,22 +30,22 @@ public class InventoryFragment extends Fragment
 
         LinearLayoutManager layoutManagerBeverages = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewBeverages = root.findViewById(R.id.recyclerViewBeverages);
-        recyclerViewBeverages.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataBeverages.GetData()));
+        recyclerViewBeverages.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryBeveragesData.GetData()));
         recyclerViewBeverages.setLayoutManager(layoutManagerBeverages);
 
         LinearLayoutManager layoutManagerMeats = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewMeats = root.findViewById(R.id.recyclerViewMeats);
-        recyclerViewMeats.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataMeats.GetData()));
+        recyclerViewMeats.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryMeatsData.GetData()));
         recyclerViewMeats.setLayoutManager(layoutManagerMeats);
 
         LinearLayoutManager layoutManagerFruits = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewFruits = root.findViewById(R.id.recyclerViewFruits);
-        recyclerViewFruits.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataFruits.GetData()));
+        recyclerViewFruits.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryFruitsData.GetData()));
         recyclerViewFruits.setLayoutManager(layoutManagerFruits);
 
         LinearLayoutManager layoutManagerVegetables= new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewVegetables = root.findViewById(R.id.recyclerViewVegetables);
-        recyclerViewVegetables.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataVegetables.GetData()));
+        recyclerViewVegetables.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryVegetablesData.GetData()));
         recyclerViewVegetables.setLayoutManager(layoutManagerVegetables);
 
         return root;

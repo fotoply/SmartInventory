@@ -11,6 +11,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
+import dk.sdu.student.kitcheninventory.data.home.HomeExpiresSoonData;
+import dk.sdu.student.kitcheninventory.data.home.HomeSuggestedRecipesData;
 import dk.sdu.student.kitcheninventory.ui.recipes.RecipesRecyclerViewAdapter;
 
 public class HomeFragment extends Fragment
@@ -25,11 +27,11 @@ public class HomeFragment extends Fragment
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = root.findViewById(R.id.homeRecyclerViewTop);
-        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), HomeRecyclerViewDataTop.GetData()));
+        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), HomeExpiresSoonData.GetData()));
         recyclerView.setLayoutManager(layoutManager);
 
         RecyclerView recyclerViewBottom = root.findViewById(R.id.homeRecyclerViewBottom);
-        recyclerViewBottom.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), HomeRecyclerViewDataBottom.GetData()));
+        recyclerViewBottom.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), HomeSuggestedRecipesData.GetData()));
         recyclerViewBottom.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
         return root;
