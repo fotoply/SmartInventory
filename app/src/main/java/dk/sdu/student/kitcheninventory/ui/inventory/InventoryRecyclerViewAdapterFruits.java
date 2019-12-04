@@ -29,7 +29,7 @@ public class InventoryRecyclerViewAdapterFruits extends RecyclerView.Adapter<Inv
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = inflater.inflate(R.layout.inventory_recyclerview_beverages_row, parent, false);
+        View view = inflater.inflate(R.layout.inventory_recyclerview_fruits_row, parent, false);
         return new RecyclerViewHolder(view);
     }
 

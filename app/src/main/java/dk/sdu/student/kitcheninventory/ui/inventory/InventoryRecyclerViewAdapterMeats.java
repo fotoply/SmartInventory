@@ -29,7 +29,7 @@ public class InventoryRecyclerViewAdapterMeats extends RecyclerView.Adapter<Inve
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = inflater.inflate(R.layout.inventory_recyclerview_beverages_row, parent, false);
+        View view = inflater.inflate(R.layout.inventory_recyclerview_meats_row, parent, false);
         return new RecyclerViewHolder(view);
     }
 
