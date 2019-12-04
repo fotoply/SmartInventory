@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import dk.sdu.student.kitcheninventory.R;
 
-public class ContentFragment extends Fragment {
+public class InventoryFragment extends Fragment {
 
-    private ContentViewModel contentViewModel;
+    private InventoryViewModel contentViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         contentViewModel =
-                ViewModelProviders.of(this).get(ContentViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+                ViewModelProviders.of(this).get(InventoryViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_inventory, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         contentViewModel.getText().observe(this, new Observer<String>() {
             @Override

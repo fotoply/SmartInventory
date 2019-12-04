@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ContentViewModel extends ViewModel {
+public class InventoryViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ContentViewModel() {
+    public InventoryViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Dette er beholdnings fragment");
     }
