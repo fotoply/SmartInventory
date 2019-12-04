@@ -27,11 +27,11 @@ public class HomeFragment extends Fragment
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = root.findViewById(R.id.homeRecyclerViewTop);
-        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), HomeExpiresSoonData.GetData()));
+        recyclerView.setAdapter(new HomeRecyclerViewAdapterTop(root.getContext(), HomeExpiresSoonData.GetData()));
         recyclerView.setLayoutManager(layoutManager);
 
         RecyclerView recyclerViewBottom = root.findViewById(R.id.homeRecyclerViewBottom);
-        recyclerViewBottom.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), HomeSuggestedRecipesData.GetData()));
+        recyclerViewBottom.setAdapter(new HomeRecyclerViewAdapterBottom(root.getContext(), HomeSuggestedRecipesData.GetData()));
         recyclerViewBottom.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
         return root;

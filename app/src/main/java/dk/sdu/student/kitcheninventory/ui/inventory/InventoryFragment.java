@@ -30,22 +30,22 @@ public class InventoryFragment extends Fragment
 
         LinearLayoutManager layoutManagerBeverages = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewBeverages = root.findViewById(R.id.recyclerViewBeverages);
-        recyclerViewBeverages.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryBeveragesData.GetData()));
+        recyclerViewBeverages.setAdapter(new InventoryRecyclerViewAdapterBeverages(root.getContext(), InventoryBeveragesData.GetData()));
         recyclerViewBeverages.setLayoutManager(layoutManagerBeverages);
 
         LinearLayoutManager layoutManagerMeats = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewMeats = root.findViewById(R.id.recyclerViewMeats);
-        recyclerViewMeats.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryMeatsData.GetData()));
+        recyclerViewMeats.setAdapter(new InventoryRecyclerViewAdapterMeats(root.getContext(), InventoryMeatsData.GetData()));
         recyclerViewMeats.setLayoutManager(layoutManagerMeats);
 
         LinearLayoutManager layoutManagerFruits = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewFruits = root.findViewById(R.id.recyclerViewFruits);
-        recyclerViewFruits.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryFruitsData.GetData()));
+        recyclerViewFruits.setAdapter(new InventoryRecyclerViewAdapterFruits(root.getContext(), InventoryFruitsData.GetData()));
         recyclerViewFruits.setLayoutManager(layoutManagerFruits);
 
         LinearLayoutManager layoutManagerVegetables= new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewVegetables = root.findViewById(R.id.recyclerViewVegetables);
-        recyclerViewVegetables.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryVegetablesData.GetData()));
+        recyclerViewVegetables.setAdapter(new InventoryRecyclerViewAdapterVegetables(root.getContext(), InventoryVegetablesData.GetData()));
         recyclerViewVegetables.setLayoutManager(layoutManagerVegetables);
 
         return root;

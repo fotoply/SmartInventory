@@ -27,7 +27,7 @@ public class ShoppingFragment extends Fragment
         View root = inflater.inflate(R.layout.fragment_shopping, container, false);
 
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), ShoppingGroceryListData.GetData()));
+        recyclerView.setAdapter(new ShoppingRecyclerViewAdapter(root.getContext(), ShoppingGroceryListData.GetData()));
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
         return root;

@@ -9,8 +9,8 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"/>
 
-    <TextView
-        android:id="@+id/yearTextView"
+    <ImageView
+        android:id="@+id/productIconImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"/>
