@@ -2,45 +2,62 @@ package dk.sdu.student.kitcheninventory.model.inventory;
 
 import android.media.Image;
 
-import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Product implements Serializable {
+import androidx.annotation.NonNull;
 
-    public String getName() {
+public class Product implements Serializable
+{
+    public Product()
+    {
+    }
+
+    public Product(String name)
+    {
+        setName(name);
+    }
+
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public Image getPhoto() {
+    public Image getPhoto()
+    {
         return photo;
     }
 
-    public void setPhoto(Image photo) {
+    public void setPhoto(Image photo)
+    {
         this.photo = photo;
     }
 
-    public Category getCategory() {
+    public Category getCategory()
+    {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Category category)
+    {
         this.category = category;
     }
 
-    public Double getAmount() {
+    public Double getAmount()
+    {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(Double amount)
+    {
         this.amount = amount;
     }
 
@@ -50,7 +67,8 @@ public class Product implements Serializable {
     private Date expirationDate;
     private Double amount;
 
-    public void applyTemplate(ProductTemplate template) {
+    public void applyTemplate(ProductTemplate template)
+    {
         this.name = template.getName();
         this.category = template.getCategory();
         int expirationTime = (int) template.getExpirationTime();
@@ -58,30 +76,39 @@ public class Product implements Serializable {
         this.amount = template.getAmount();
     }
 
-    public void setExpirationInDays(int expirationTime) {
+    public void setExpirationInDays(int expirationTime)
+    {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.add(Calendar.DATE, expirationTime);
         this.expirationDate = new Date(cal.getTimeInMillis());
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(Date expirationDate)
+    {
         this.expirationDate = expirationDate;
     }
 
-    public String getFormattedExpiration() {
+    public String getFormattedExpiration()
+    {
         long diff = getDaysUntilExpiration();
 
-        if (diff > 1) {
+        if (diff > 1)
+        {
             return String.format("om %d dage.", diff);
-        } else if (diff == 1) {
+        }
+        else if (diff == 1)
+        {
             return "i morgen.";
-        } else {
+        }
+        else
+        {
             return "i dag.";
         }
     }
 
-    public long getDaysUntilExpiration() {
+    public long getDaysUntilExpiration()
+    {
         Date today = new Date();
         today.setHours(0);
         return TimeUnit.DAYS.convert(expirationDate.getTime() - today.getTime(), TimeUnit.MILLISECONDS);
@@ -89,11 +116,13 @@ public class Product implements Serializable {
 
     @Override
     @NonNull
-    public String toString() {
+    public String toString()
+    {
         return amount + "x " + name + " - Udløber " + getFormattedExpiration();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println(Arrays.toString(DefaultTemplates.search("Let").toArray()));
         System.out.println(Arrays.toString(DefaultTemplates.search("let").toArray()));
         System.out.println(Arrays.toString(DefaultTemplates.search("mælk").toArray()));
