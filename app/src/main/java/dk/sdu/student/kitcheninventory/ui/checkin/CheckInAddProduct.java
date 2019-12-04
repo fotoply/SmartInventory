@@ -79,6 +79,7 @@ public class CheckInAddProduct extends DialogFragment {
         categorySpinner.setAdapter(spinnerAdapter);
 
         ((Button) view.findViewById(R.id.addProductButton)).setOnClickListener(v -> {
+            Inventory.getInstance().addProduct(createdProduct);
             dismiss();
         });
         return view;
