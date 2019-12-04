@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.utilities;
+package dk.sdu.student.kitcheninventory.ui.shopping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,52 +6,52 @@ import java.util.List;
 import dk.sdu.student.kitcheninventory.model.inventory.Product;
 import dk.sdu.student.kitcheninventory.model.recipes.RecipeObject;
 
-public class RecyclerViewData
+public class ShoppingRecyclerViewData
 {
     public static List<RecipeObject> GetData()
     {
         String[] names =
                 {
-                        "Forrest Gump",
-                        "Shawshank Redemption",
-                        "The Dark Knight",
-                        "Star Wars",
-                        "Harry Potter",
-                        "Lord of The Rings",
-                        "Iron Man",
-                        "Captain America",
-                        "Black Panther",
-                        "Spiderman",
-                        "Forrest Gump",
-                        "Shawshank Redemption",
-                        "The Dark Knight",
-                        "Star Wars",
-                        "Harry Potter",
-                        "Lord of The Rings",
-                        "Iron Man",
-                        "Captain America",
-                        "Black Panther",
-                        "Spiderman",
-                        "Forrest Gump",
-                        "Shawshank Redemption",
-                        "The Dark Knight",
-                        "Star Wars",
-                        "Harry Potter",
-                        "Lord of The Rings",
-                        "Iron Man",
-                        "Captain America",
-                        "Black Panther",
-                        "Spiderman",
-                        "Forrest Gump",
-                        "Shawshank Redemption",
-                        "The Dark Knight",
-                        "Star Wars",
-                        "Harry Potter",
-                        "Lord of The Rings",
-                        "Iron Man",
-                        "Captain America",
-                        "Black Panther",
-                        "Spiderman"
+                        "Banana",
+                        "Apple",
+                        "Watermelon",
+                        "Salmon",
+                        "Beef",
+                        "Chicken",
+                        "Tuna",
+                        "Carrots",
+                        "Spinach",
+                        "Cashews",
+                        "Banana",
+                        "Apple",
+                        "Watermelon",
+                        "Salmon",
+                        "Beef",
+                        "Chicken",
+                        "Tuna",
+                        "Carrots",
+                        "Spinach",
+                        "Cashews",
+                        "Banana",
+                        "Apple",
+                        "Watermelon",
+                        "Salmon",
+                        "Beef",
+                        "Chicken",
+                        "Tuna",
+                        "Carrots",
+                        "Spinach",
+                        "Cashews",
+                        "Banana",
+                        "Apple",
+                        "Watermelon",
+                        "Salmon",
+                        "Beef",
+                        "Chicken",
+                        "Tuna",
+                        "Carrots",
+                        "Spinach",
+                        "Cashews"
                 };
 
         String[] years =

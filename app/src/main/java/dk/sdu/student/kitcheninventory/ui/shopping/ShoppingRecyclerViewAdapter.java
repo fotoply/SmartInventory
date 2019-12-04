@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.ui.recipes;
+package dk.sdu.student.kitcheninventory.ui.shopping;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,12 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
 import dk.sdu.student.kitcheninventory.model.recipes.RecipeObject;
 
-public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecyclerViewAdapter.RecyclerViewHolder>
+public class ShoppingRecyclerViewAdapter extends RecyclerView.Adapter<ShoppingRecyclerViewAdapter.RecyclerViewHolder>
 {
     private final LayoutInflater inflater;
     private List<RecipeObject> data = Collections.emptyList();
 
-    public RecipesRecyclerViewAdapter(Context context, List<RecipeObject> data)
+    public ShoppingRecyclerViewAdapter(Context context, List<RecipeObject> data)
     {
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -29,7 +29,7 @@ public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecy
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = inflater.inflate(R.layout.recipes_recyclerview_row, parent, false);
+        View view = inflater.inflate(R.layout.shopping_recyclerview_row, parent, false);
         return new RecyclerViewHolder(view);
     }
 
