@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.utilities;
+package dk.sdu.student.kitcheninventory.ui.recipes;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,12 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
 import dk.sdu.student.kitcheninventory.model.recipes.RecipeObject;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>
+public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecyclerViewAdapter.RecyclerViewHolder>
 {
     private final LayoutInflater inflater;
     private List<RecipeObject> data = Collections.emptyList();
 
-    public RecyclerViewAdapter(Context context, List<RecipeObject> data)
+    public RecipesRecyclerViewAdapter(Context context, List<RecipeObject> data)
     {
         inflater = LayoutInflater.from(context);
         this.data = data;
