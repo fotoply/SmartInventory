@@ -14,7 +14,7 @@ import android.widget.Spinner;
 
 import dk.sdu.student.kitcheninventory.R;
 import dk.sdu.student.kitcheninventory.model.inventory.Product;
-import dk.sdu.student.kitcheninventory.model.inventory.StorageLocation;
+import dk.sdu.student.kitcheninventory.model.inventory.Inventory;
 import dk.sdu.student.kitcheninventory.model.inventory.TemplateLibrary;
 
 public class CheckInAddProduct extends DialogFragment {
@@ -74,7 +74,7 @@ public class CheckInAddProduct extends DialogFragment {
         ((EditText) view.findViewById(R.id.amountEditText)).setText(createdProduct.getAmount() + "");
 
         Spinner categorySpinner = (Spinner) view.findViewById(R.id.locationSpinner);
-        ArrayAdapter spinnerAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, StorageLocation.getInstance().getAllCompartmentNames());
+        ArrayAdapter spinnerAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, Inventory.getInstance().getAllCompartmentNames());
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(spinnerAdapter);
 
