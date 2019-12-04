@@ -7,10 +7,12 @@ import java.util.stream.Collectors;
 public class Inventory {
 
     private static Inventory instance;
+    private StorageCompartment DEFAULT_STORAGE_COMPARTMENT;
 
     private Inventory() {
         instance = this;
         compartments = new ArrayList<>();
+        DEFAULT_STORAGE_COMPARTMENT = new StorageCompartment("Mangler køkkenplads");
     }
 
     public static Inventory getInstance() {
@@ -23,11 +25,41 @@ public class Inventory {
     private List<StorageCompartment> compartments;
 
     public StorageCompartment getCompartmentByName(String name) {
-        return compartments.stream().filter(storageCompartment -> storageCompartment.getName().equals(name)).findFirst().get();
+        return compartments.stream().filter(storageCompartment -> storageCompartment.getName().equals(name)).findFirst().orElse(null);
     }
-
 
     public List<String> getAllCompartmentNames() {
         return compartments.stream().map(StorageCompartment::getName).collect(Collectors.toList());
+    }
+
+    public void addProduct(Product product) {
+        StorageCompartment compartment = getCompartmentByName(product.getCategory());
+        if (compartment == null) {
+            DEFAULT_STORAGE_COMPARTMENT.addProduct(product);
+        } else {
+            compartment.addProduct(product);
+        }
+    }
+
+    public void addCompartment(String name) {
+        compartments.add(new StorageCompartment(name));
+    }
+
+    public List<Product> getAllProducts() {
+        List<Product> products = new ArrayList<>();
+        for (StorageCompartment storageCompartment : compartments) {
+            products.addAll(storageCompartment.getProducts());
+        }
+        return products;
+    }
+
+    public List<Product> getProductsByExpirationDate() {
+        return getProductsByExpirationDate(10);
+    }
+
+    public List<Product> getProductsByExpirationDate(int limit) {
+        List<Product> result = getAllProducts();
+        result.sort((o1, o2) -> (int) (o2.getDaysUntilExpiration() - o1.getDaysUntilExpiration()));
+        return result.subList(0, limit - 1);
     }
 }
