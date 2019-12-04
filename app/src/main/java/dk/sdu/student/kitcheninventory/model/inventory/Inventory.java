@@ -13,6 +13,10 @@ public class Inventory {
         instance = this;
         compartments = new ArrayList<>();
         DEFAULT_STORAGE_COMPARTMENT = new StorageCompartment("Mangler køkkenplads");
+        addCompartment("Køleskab");
+        addCompartment("Overskab");
+        addCompartment("Underskab");
+        addCompartment("Diverse/Andet");
     }
 
     public static Inventory getInstance() {
