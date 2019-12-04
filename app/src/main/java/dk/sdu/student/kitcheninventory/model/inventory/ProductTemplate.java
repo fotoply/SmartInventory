@@ -6,7 +6,7 @@ public class ProductTemplate implements Serializable {
 
 
     private String name;
-    private Category category;
+    private String category;
     private double expirationTime;
     private double amount;
     private String barcode;
@@ -15,11 +15,11 @@ public class ProductTemplate implements Serializable {
         return barcode;
     }
 
-    public ProductTemplate(String name, Category category, double expirationTime, double amount) {
+    public ProductTemplate(String name, String category, double expirationTime, double amount) {
         this(name, category, expirationTime, amount, "");
     }
 
-    public ProductTemplate(String name, Category category, double expirationTime, double amount, String barcode) {
+    public ProductTemplate(String name, String category, double expirationTime, double amount, String barcode) {
         this.name = name;
         this.category = category;
         this.expirationTime = expirationTime;
@@ -31,7 +31,7 @@ public class ProductTemplate implements Serializable {
         return name;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 

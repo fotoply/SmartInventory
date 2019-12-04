@@ -2,6 +2,7 @@ package dk.sdu.student.kitcheninventory.model.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StorageLocation {
 
@@ -27,4 +28,7 @@ public class StorageLocation {
     }
 
 
+    public List<String> getAllCompartmentNames() {
+        return storageCompartments.stream().map(StorageCompartment::getName).collect(Collectors.toList());
+    }
 }

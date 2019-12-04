@@ -7,6 +7,7 @@ import androidx.fragment.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -72,8 +73,12 @@ public class CheckInAddProduct extends DialogFragment {
         ((EditText) view.findViewById(R.id.expiresEditText)).setText(createdProduct.getDaysUntilExpiration() + "");
         ((EditText) view.findViewById(R.id.amountEditText)).setText(createdProduct.getAmount() + "");
 
+        Spinner categorySpinner = (Spinner) view.findViewById(R.id.locationSpinner);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, StorageLocation.getInstance().getAllCompartmentNames());
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(spinnerAdapter);
+
         ((Button) view.findViewById(R.id.addProductButton)).setOnClickListener(v -> {
-            StorageLocation.getInstance().getCompartmentByName((String) ((Spinner) view.findViewById(R.id.locationSpinner)).getSelectedItem());
             dismiss();
         });
         return view;
