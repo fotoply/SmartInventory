@@ -21,13 +21,28 @@ public class InventoryFragment extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState)
     {
-        contentViewModel =
-                ViewModelProviders.of(this).get(InventoryViewModel.class);
+        contentViewModel = ViewModelProviders.of(this).get(InventoryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_inventory, container, false);
 
-        RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewData.GetData()));
-        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        LinearLayoutManager layoutManagerBeverages = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerViewBeverages = root.findViewById(R.id.recyclerViewBeverages);
+        recyclerViewBeverages.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataBeverages.GetData()));
+        recyclerViewBeverages.setLayoutManager(layoutManagerBeverages);
+
+        LinearLayoutManager layoutManagerMeats = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerViewMeats = root.findViewById(R.id.recyclerViewMeats);
+        recyclerViewMeats.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataMeats.GetData()));
+        recyclerViewMeats.setLayoutManager(layoutManagerMeats);
+
+        LinearLayoutManager layoutManagerFruits = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerViewFruits = root.findViewById(R.id.recyclerViewFruits);
+        recyclerViewFruits.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataFruits.GetData()));
+        recyclerViewFruits.setLayoutManager(layoutManagerFruits);
+
+        LinearLayoutManager layoutManagerVegetables= new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerViewVegetables = root.findViewById(R.id.recyclerViewVegetables);
+        recyclerViewVegetables.setAdapter(new RecipesRecyclerViewAdapter(root.getContext(), InventoryRecyclerViewDataVegetables.GetData()));
+        recyclerViewVegetables.setLayoutManager(layoutManagerVegetables);
 
         return root;
     }

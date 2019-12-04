@@ -15,12 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
 import dk.sdu.student.kitcheninventory.model.recipes.Ingredient;
 
-public class InventoryRecyclerViewAdapter extends RecyclerView.Adapter<InventoryRecyclerViewAdapter.RecyclerViewHolder>
+public class InventoryRecyclerViewAdapterBeverages extends RecyclerView.Adapter<InventoryRecyclerViewAdapterBeverages.RecyclerViewHolder>
 {
     private final LayoutInflater inflater;
     private List<Ingredient> data = Collections.emptyList();
 
-    public InventoryRecyclerViewAdapter(Context context, List<Ingredient> data)
+    public InventoryRecyclerViewAdapterBeverages(Context context, List<Ingredient> data)
     {
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -29,7 +29,7 @@ public class InventoryRecyclerViewAdapter extends RecyclerView.Adapter<Inventory
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = inflater.inflate(R.layout.inventory_recyclerview_row, parent, false);
+        View view = inflater.inflate(R.layout.inventory_recyclerview_beverages_row, parent, false);
         return new RecyclerViewHolder(view);
     }
 
