@@ -10,21 +10,35 @@ public class ProductTemplate implements Serializable {
     private double expirationTime;
     private double amount;
     private String barcode;
+    private String amountSuffix;
 
     public String getBarcode() {
         return barcode;
     }
 
-    public ProductTemplate(String name, String category, double expirationTime, double amount) {
-        this(name, category, expirationTime, amount, "");
+    public ProductTemplate(String name, String category, double expirationTime) {
+        this(name, category, expirationTime, 1.0);
     }
 
-    public ProductTemplate(String name, String category, double expirationTime, double amount, String barcode) {
+    public ProductTemplate(String name, String category, double expirationTime, double amount) {
+        this(name, category, expirationTime, amount, "", "");
+    }
+
+    public ProductTemplate(String name, String category, double expirationTime, String amountSuffix) {
+        this(name, category, expirationTime, 1.0, amountSuffix);
+    }
+
+    public ProductTemplate(String name, String category, double expirationTime, double amount, String amountSuffix) {
+        this(name, category, expirationTime, amount, "", amountSuffix);
+    }
+
+    public ProductTemplate(String name, String category, double expirationTime, double amount, String barcode, String amountSuffix) {
         this.name = name;
         this.category = category;
         this.expirationTime = expirationTime;
         this.amount = amount;
         this.barcode = barcode;
+        this.amountSuffix = amountSuffix;
     }
 
     public String getName() {

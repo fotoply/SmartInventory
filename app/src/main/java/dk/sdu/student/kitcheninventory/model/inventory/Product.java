@@ -12,12 +12,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Product implements Serializable {
 
-    public Product()
-    {
+    public Product() {
     }
 
-    public Product(String name)
-    {
+    public Product(String name) {
         this.name = name;
     }
 
@@ -57,7 +55,16 @@ public class Product implements Serializable {
     private Image photo;
     private String category;
     private Date expirationDate;
-    private Double amount;
+    private double amount;
+    private String amountSuffix;
+
+    public String getAmountSuffix() {
+        return amountSuffix;
+    }
+
+    public void setAmountSuffix(String amountSuffix) {
+        this.amountSuffix = amountSuffix;
+    }
 
     public void applyTemplate(ProductTemplate template) {
         this.name = template.getName();
@@ -94,6 +101,10 @@ public class Product implements Serializable {
         Date today = new Date();
         today.setHours(0);
         return TimeUnit.DAYS.convert(expirationDate.getTime() - today.getTime(), TimeUnit.MILLISECONDS);
+    }
+
+    public String getFormattedAmount() {
+        return amount + amountSuffix;
     }
 
     @Override

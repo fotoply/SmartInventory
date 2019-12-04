@@ -9,12 +9,12 @@ public class DefaultTemplates {
     private static List<ProductTemplate> defaultTemplates = new ArrayList<>();
 
     static {
-        defaultTemplates.add(new ProductTemplate("1L Minimælk", "Køleskab", 7, 1.0));
-        defaultTemplates.add(new ProductTemplate("1L Letmælk", "Køleskab", 7, 1.0));
-        defaultTemplates.add(new ProductTemplate("1L Sødmælk", "Køleskab", 7, 1.0));
-        defaultTemplates.add(new ProductTemplate("1L Skummemælk", "Køleskab", 7, 1.0));
-        defaultTemplates.add(new ProductTemplate("Havregryn", "", 28, 1.0));
-        defaultTemplates.add(new ProductTemplate("Vitamin Well Prepare", "", 90, 1.0, "7350042717743"));
+        defaultTemplates.add(new ProductTemplate("Minimælk", "Køleskab", 7, 1.0, "L"));
+        defaultTemplates.add(new ProductTemplate("Letmælk", "Køleskab", 7, 1.0, "L"));
+        defaultTemplates.add(new ProductTemplate("Sødmælk", "Køleskab", 7, 1.0, "L"));
+        defaultTemplates.add(new ProductTemplate("Skummemælk", "Køleskab", 7, 1.0, "L"));
+        defaultTemplates.add(new ProductTemplate("Havregryn", "", 28, 1.0, "stk"));
+        defaultTemplates.add(new ProductTemplate("Vitamin Well Prepare", "", 90, 1.0,"stk" ,"7350042717743"));
 
     }
 
