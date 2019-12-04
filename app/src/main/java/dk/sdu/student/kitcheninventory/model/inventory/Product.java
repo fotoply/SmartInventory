@@ -12,6 +12,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Product implements Serializable {
 
+    public Product()
+    {
+    }
+
+    public Product(String name)
+    {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

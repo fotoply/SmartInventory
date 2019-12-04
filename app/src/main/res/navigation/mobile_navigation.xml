@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_contents"
-        android:name="dk.sdu.student.kitcheninventory.ui.contents.InventoryFragment"
+        android:name="dk.sdu.student.kitcheninventory.ui.inventory.InventoryFragment"
         android:label="@string/title_contents"
         tools:layout="@layout/fragment_inventory" />
 

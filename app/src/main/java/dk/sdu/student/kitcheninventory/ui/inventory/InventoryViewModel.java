@@ -1,4 +1,4 @@
-package dk.sdu.student.kitcheninventory.ui.contents;
+package dk.sdu.student.kitcheninventory.ui.inventory;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

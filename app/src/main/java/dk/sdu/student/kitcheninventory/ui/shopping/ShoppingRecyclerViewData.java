@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dk.sdu.student.kitcheninventory.model.inventory.Product;
-import dk.sdu.student.kitcheninventory.model.recipes.RecipeObject;
+import dk.sdu.student.kitcheninventory.model.recipes.Ingredient;
 
 public class ShoppingRecyclerViewData
 {
-    public static List<RecipeObject> GetData()
+    public static List<Ingredient> GetData()
     {
         String[] names =
                 {
@@ -98,10 +98,10 @@ public class ShoppingRecyclerViewData
                         "2017"
                 };
 
-        List<RecipeObject> data = new ArrayList<>();
+        List<Ingredient> data = new ArrayList<>();
         for (int i = 0; i < 40; i++)
         {
-            data.add(new RecipeObject(new Product(names[i]), Double.valueOf(years[i])));
+            data.add(new Ingredient(new Product(names[i]), Double.valueOf(years[i])));
         }
 
         return data;
