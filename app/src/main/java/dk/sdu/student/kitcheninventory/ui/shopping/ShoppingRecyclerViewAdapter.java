@@ -13,14 +13,14 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 import dk.sdu.student.kitcheninventory.R;
-import dk.sdu.student.kitcheninventory.model.recipes.RecipeObject;
+import dk.sdu.student.kitcheninventory.model.recipes.Ingredient;
 
 public class ShoppingRecyclerViewAdapter extends RecyclerView.Adapter<ShoppingRecyclerViewAdapter.RecyclerViewHolder>
 {
     private final LayoutInflater inflater;
-    private List<RecipeObject> data = Collections.emptyList();
+    private List<Ingredient> data = Collections.emptyList();
 
-    public ShoppingRecyclerViewAdapter(Context context, List<RecipeObject> data)
+    public ShoppingRecyclerViewAdapter(Context context, List<Ingredient> data)
     {
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -36,7 +36,7 @@ public class ShoppingRecyclerViewAdapter extends RecyclerView.Adapter<ShoppingRe
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position)
     {
-        RecipeObject currentRecipe = data.get(position);
+        Ingredient currentRecipe = data.get(position);
         holder.name.setText(currentRecipe.getProduct().getName());
         holder.year.setText(Double.toString(currentRecipe.getAmount()));
     }
