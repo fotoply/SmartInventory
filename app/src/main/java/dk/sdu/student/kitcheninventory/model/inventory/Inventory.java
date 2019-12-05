@@ -84,7 +84,7 @@ public class Inventory {
 
     public List<Product> getProductsByExpirationDate(int limit) {
         List<Product> result = getAllProducts();
-        result.sort((o1, o2) -> (int) (o2.getDaysUntilExpiration() - o1.getDaysUntilExpiration()));
+        result.sort((o1, o2) -> (int) (o1.getDaysUntilExpiration() - o2.getDaysUntilExpiration()));
         if (result.size() < limit) {
             return result;
         }
