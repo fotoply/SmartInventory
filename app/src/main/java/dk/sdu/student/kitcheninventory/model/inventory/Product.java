@@ -72,6 +72,7 @@ public class Product implements Serializable {
         int expirationTime = (int) template.getExpirationTime();
         setExpirationInDays(expirationTime);
         this.amount = template.getAmount();
+        this.amountSuffix = template.getAmountSuffix();
         return this;
     }
 

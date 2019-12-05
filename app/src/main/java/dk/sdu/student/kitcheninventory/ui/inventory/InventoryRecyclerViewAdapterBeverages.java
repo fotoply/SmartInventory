@@ -40,7 +40,7 @@ public class InventoryRecyclerViewAdapterBeverages extends RecyclerView.Adapter<
         Ingredient currentRecipe = data.get(position);
         holder.name.setText(currentRecipe.getProduct().getName());
         holder.icon.setImageResource(R.drawable.milk);
-        holder.amount.setText(Double.toString(currentRecipe.getAmount()));
+        holder.amount.setText(Double.toString(currentRecipe.getAmount()) + " " +currentRecipe.getProduct().getAmountSuffix());
     }
 
     @Override

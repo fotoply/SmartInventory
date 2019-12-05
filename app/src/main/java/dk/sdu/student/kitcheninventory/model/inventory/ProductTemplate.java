@@ -56,4 +56,8 @@ public class ProductTemplate implements Serializable {
     public double getAmount() {
         return amount;
     }
+
+    public String getAmountSuffix() {
+        return amountSuffix;
+    }
 }

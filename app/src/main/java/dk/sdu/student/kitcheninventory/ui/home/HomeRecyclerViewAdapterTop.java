@@ -39,7 +39,24 @@ public class HomeRecyclerViewAdapterTop extends RecyclerView.Adapter<HomeRecycle
     {
         Ingredient currentRecipe = data.get(position);
         holder.name.setText(currentRecipe.getProduct().getName());
-        holder.icon.setImageResource(R.drawable.milk);
+        switch (currentRecipe.getProduct().getCategory()) {
+            case "Kød":
+                holder.icon.setImageResource(R.drawable.meat);
+                break;
+
+            case "Grøntsag":
+                holder.icon.setImageResource(R.drawable.broccoli);
+                break;
+
+            case "Drikkelse":
+                holder.icon.setImageResource(R.drawable.milk);
+                break;
+
+            case "Frugt":
+                holder.icon.setImageResource(R.drawable.apple);
+                break;
+
+        }
         holder.expiration.setText(currentRecipe.getProduct().getFormattedExpiration());
     }
 

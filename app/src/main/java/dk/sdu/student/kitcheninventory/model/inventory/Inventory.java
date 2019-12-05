@@ -27,7 +27,7 @@ public class Inventory {
         for (int i = 0; i < 20; i++) {
             Product randomProduct = new Product();
             randomProduct.applyTemplate(DefaultTemplates.getRandomProduct());
-            int variation = random.nextInt(3) - 1;
+            int variation = random.nextInt(5) - 2;
             randomProduct.setExpirationInDays((int) (randomProduct.getDaysUntilExpiration() + variation));
             addProduct(randomProduct);
         }
