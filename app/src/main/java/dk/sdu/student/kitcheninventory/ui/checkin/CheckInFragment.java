@@ -60,6 +60,7 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
         new AlertDialog.Builder(getContext())
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Vælg en handling")
+                .setCancelable(false)
                 .setPositiveButton("Fjern produkt", new DialogInterface.OnClickListener()
                 {
                     @Override
