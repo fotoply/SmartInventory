@@ -1,5 +1,6 @@
 package dk.sdu.student.kitcheninventory.ui.checkin;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.SparseArray;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -39,8 +41,10 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(CheckInViewModel.class);
+
+        GetCheckInOut();
+
+        notificationsViewModel = ViewModelProviders.of(this).get(CheckInViewModel.class);
         View root = inflater.inflate(R.layout.fragment_checkin, container, false);
         BarcodeReaderFragment readerFragment = BarcodeReaderFragment.newInstance(true, false, View.VISIBLE);
         readerFragment.setListener(this);
@@ -49,6 +53,30 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
         fragmentTransaction.replace(R.id.fm_container, readerFragment);
         fragmentTransaction.commitAllowingStateLoss();
         return root;
+    }
+
+    private void GetCheckInOut()
+    {
+        new AlertDialog.Builder(getContext())
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Vælg en handling")
+                .setPositiveButton("Fjern produkt", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        setCheckIn(false);
+                    }
+                })
+                .setNegativeButton("Tilføj produkt", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        setCheckIn(true);
+                    }
+                })
+                .show();
     }
 
     @Override
