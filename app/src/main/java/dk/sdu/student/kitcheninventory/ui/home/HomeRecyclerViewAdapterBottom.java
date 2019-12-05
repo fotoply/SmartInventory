@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -37,8 +38,8 @@ public class HomeRecyclerViewAdapterBottom extends RecyclerView.Adapter<HomeRecy
     public void onBindViewHolder(RecyclerViewHolder holder, int position)
     {
         Ingredient currentRecipe = data.get(position);
-        holder.name.setText(currentRecipe.getProduct().getName());
-        holder.year.setText(Double.toString(currentRecipe.getAmount()));
+        holder.recipesImageView.setImageResource(R.drawable.salad);
+        holder.recipesTextView.setText("Servér hjemmelavet Cæsar Salat med lækker dressing, croutoner og ostechips..");
     }
 
     @Override
@@ -55,14 +56,14 @@ public class HomeRecyclerViewAdapterBottom extends RecyclerView.Adapter<HomeRecy
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        public final TextView name;
-        public final TextView year;
+        public final ImageView recipesImageView;
+        public final TextView recipesTextView;
 
         public RecyclerViewHolder(View itemView)
         {
             super(itemView);
-            name = itemView.findViewById(R.id.nameTextView);
-            year = itemView.findViewById(R.id.yearTextView);
+            recipesImageView = itemView.findViewById(R.id.homeRecipesImageView);
+            recipesTextView = itemView.findViewById(R.id.homeRecipesTextView);
             itemView.setOnClickListener(this);
         }
 
