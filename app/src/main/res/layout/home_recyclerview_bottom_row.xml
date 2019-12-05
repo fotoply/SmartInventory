@@ -9,8 +9,11 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_margin="1dp"
-        card_view:cardCornerRadius="1dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        card_view:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,17 +25,27 @@
                 android:id="@+id/homeRecipesImageView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_weight="2.75"
                 android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/homeRecipesNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="bottom"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/homeRecipesTextView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.75"
                 android:textSize="12sp"
                 android:layout_marginLeft="5dp"
-                android:gravity="center_vertical"/>
+                android:gravity="top"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

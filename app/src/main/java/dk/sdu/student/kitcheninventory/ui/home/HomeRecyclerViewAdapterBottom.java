@@ -38,6 +38,7 @@ public class HomeRecyclerViewAdapterBottom extends RecyclerView.Adapter<HomeRecy
     public void onBindViewHolder(RecyclerViewHolder holder, int position)
     {
         Ingredient currentRecipe = data.get(position);
+        holder.recipesNameTextView.setText("Cæsar salat");
         holder.recipesImageView.setImageResource(R.drawable.salad);
         holder.recipesTextView.setText("Servér hjemmelavet Cæsar Salat med lækker dressing, croutoner og ostechips..");
     }
@@ -56,12 +57,14 @@ public class HomeRecyclerViewAdapterBottom extends RecyclerView.Adapter<HomeRecy
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
+        public final TextView recipesNameTextView;
         public final ImageView recipesImageView;
         public final TextView recipesTextView;
 
         public RecyclerViewHolder(View itemView)
         {
             super(itemView);
+            recipesNameTextView = itemView.findViewById(R.id.homeRecipesNameTextView);
             recipesImageView = itemView.findViewById(R.id.homeRecipesImageView);
             recipesTextView = itemView.findViewById(R.id.homeRecipesTextView);
             itemView.setOnClickListener(this);
