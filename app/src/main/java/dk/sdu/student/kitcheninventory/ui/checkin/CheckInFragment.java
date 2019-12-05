@@ -42,20 +42,12 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
     @Override
     public void onScanned(Barcode barcode) {
         if(ready) {
+            System.out.println("Commencing scan");
             ready = false;
             CheckInAddProduct addProduct = CheckInAddProduct.newInstance(barcode.displayValue, barcode.rawValue);
             addProduct.show(getFragmentManager(), "fragment_add_product");
-            addProduct.onDismiss(new DialogInterface() {
-                @Override
-                public void cancel() {
-                    ready = true;
-                }
-
-                @Override
-                public void dismiss() {
-                    ready = true;
-                }
-            });
+            getFragmentManager().executePendingTransactions();
+            addProduct.getDialog().setOnDismissListener(dialogInterface -> ready = true);
         }
     }
 
@@ -78,4 +70,5 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
     public void onCameraPermissionDenied() {
 
     }
+
 }
