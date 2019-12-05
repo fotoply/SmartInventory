@@ -2,6 +2,7 @@ package dk.sdu.student.kitcheninventory.model.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class Inventory {
@@ -13,10 +14,10 @@ public class Inventory {
         instance = this;
         compartments = new ArrayList<>();
         DEFAULT_STORAGE_COMPARTMENT = new StorageCompartment("Mangler køkkenplads");
-        addCompartment("Køleskab");
-        addCompartment("Overskab");
-        addCompartment("Underskab");
-        addCompartment("Diverse/Andet");
+        addCompartment("Kød");
+        addCompartment("Frugt");
+        addCompartment("Grøntsager");
+        addCompartment("Drikkelse");
     }
 
     public static Inventory getInstance() {
@@ -37,12 +38,17 @@ public class Inventory {
     }
 
     public void addProduct(Product product) {
+        if (product == null) {
+            throw new NoSuchElementException("Cannot add null products");
+        }
+
         StorageCompartment compartment = getCompartmentByName(product.getCategory());
         if (compartment == null) {
             DEFAULT_STORAGE_COMPARTMENT.addProduct(product);
         } else {
             compartment.addProduct(product);
         }
+        System.out.println(product.getName() + " was added");
     }
 
     public void addCompartment(String name) {
@@ -54,6 +60,7 @@ public class Inventory {
         for (StorageCompartment storageCompartment : compartments) {
             products.addAll(storageCompartment.getProducts());
         }
+        products.addAll(DEFAULT_STORAGE_COMPARTMENT.getProducts());
         return products;
     }
 
@@ -64,6 +71,9 @@ public class Inventory {
     public List<Product> getProductsByExpirationDate(int limit) {
         List<Product> result = getAllProducts();
         result.sort((o1, o2) -> (int) (o2.getDaysUntilExpiration() - o1.getDaysUntilExpiration()));
+        if (result.size() < limit) {
+            return result;
+        }
         return result.subList(0, limit - 1);
     }
 }

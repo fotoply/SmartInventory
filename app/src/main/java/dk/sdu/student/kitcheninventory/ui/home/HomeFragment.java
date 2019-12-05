@@ -19,6 +19,8 @@ public class HomeFragment extends Fragment
 {
 
     private HomeViewModel homeViewModel;
+    private HomeRecyclerViewAdapterTop adapter;
+    private RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -26,8 +28,9 @@ public class HomeFragment extends Fragment
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(root.getContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = root.findViewById(R.id.homeRecyclerViewTop);
-        recyclerView.setAdapter(new HomeRecyclerViewAdapterTop(root.getContext(), HomeExpiresSoonData.GetData()));
+        recyclerView = root.findViewById(R.id.homeRecyclerViewTop);
+        adapter = new HomeRecyclerViewAdapterTop(root.getContext(), HomeExpiresSoonData.GetData());
+        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
 
         RecyclerView recyclerViewBottom = root.findViewById(R.id.homeRecyclerViewBottom);
@@ -35,5 +38,16 @@ public class HomeFragment extends Fragment
         recyclerViewBottom.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        adapter = new HomeRecyclerViewAdapterTop(this.getContext(), HomeExpiresSoonData.GetData());
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+        System.out.println("Data size: " + HomeExpiresSoonData.GetData().size());
     }
 }
