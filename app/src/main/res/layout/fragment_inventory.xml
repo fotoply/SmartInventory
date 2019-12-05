@@ -5,29 +5,78 @@
     android:orientation="vertical"
     android:weightSum="1.15">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:text="Drikkevarer"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewBeverages"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0.15"></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:text="Kød"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMeats"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25"></androidx.recyclerview.widget.RecyclerView>
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0.15"></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:text="Grøntsager"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFruits"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0.15"></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:text="Frugter"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewVegetables"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0.15"></androidx.recyclerview.widget.RecyclerView>
 
     <Space
         android:layout_width="match_parent"

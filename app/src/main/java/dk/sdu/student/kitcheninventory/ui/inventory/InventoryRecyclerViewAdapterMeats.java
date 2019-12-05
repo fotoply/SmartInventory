@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -38,7 +39,8 @@ public class InventoryRecyclerViewAdapterMeats extends RecyclerView.Adapter<Inve
     {
         Ingredient currentRecipe = data.get(position);
         holder.name.setText(currentRecipe.getProduct().getName());
-        holder.year.setText(Double.toString(currentRecipe.getAmount()));
+        holder.icon.setImageResource(R.drawable.milk);
+        holder.amount.setText(Double.toString(currentRecipe.getAmount()));
     }
 
     @Override
@@ -56,13 +58,15 @@ public class InventoryRecyclerViewAdapterMeats extends RecyclerView.Adapter<Inve
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         public final TextView name;
-        public final TextView year;
+        public final ImageView icon;
+        public final TextView amount;
 
         public RecyclerViewHolder(View itemView)
         {
             super(itemView);
-            name = itemView.findViewById(R.id.nameTextView);
-            year = itemView.findViewById(R.id.yearTextView);
+            name = itemView.findViewById(R.id.meatsProductNameTextView);
+            icon = itemView.findViewById(R.id.meatsProductIconImageView);
+            amount = itemView.findViewById(R.id.meatsAmountTextView);
             itemView.setOnClickListener(this);
         }
 
