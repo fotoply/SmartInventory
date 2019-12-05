@@ -1,18 +1,16 @@
 package dk.sdu.student.kitcheninventory.ui.checkin;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.vision.barcode.Barcode;
@@ -25,6 +23,7 @@ import dk.sdu.student.kitcheninventory.ui.barcode.BarcodeReaderFragment;
 public class CheckInFragment extends Fragment implements BarcodeReaderFragment.BarcodeReaderListener {
 
     private CheckInViewModel notificationsViewModel;
+    private boolean ready = true;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,8 +41,22 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
 
     @Override
     public void onScanned(Barcode barcode) {
-        CheckInAddProduct  addProduct = CheckInAddProduct.newInstance(barcode.displayValue, barcode.rawValue);
-        addProduct.show(getFragmentManager(), "fragment_add_product");
+        if(ready) {
+            ready = false;
+            CheckInAddProduct addProduct = CheckInAddProduct.newInstance(barcode.displayValue, barcode.rawValue);
+            addProduct.show(getFragmentManager(), "fragment_add_product");
+            addProduct.onDismiss(new DialogInterface() {
+                @Override
+                public void cancel() {
+                    ready = true;
+                }
+
+                @Override
+                public void dismiss() {
+                    ready = true;
+                }
+            });
+        }
     }
 
     @Override

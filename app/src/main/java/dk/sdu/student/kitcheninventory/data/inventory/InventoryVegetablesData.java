@@ -12,6 +12,6 @@ public class InventoryVegetablesData
 {
     public static List<Ingredient> GetData()
     {
-        return Inventory.getInstance().getCompartmentByName("Grøntsager").getProducts().stream().map(product -> new Ingredient(product, product.getAmount())).collect(Collectors.toList());
+        return Inventory.getInstance().getCompartmentByName("Grøntsag").getProducts().stream().map(product -> new Ingredient(product, product.getAmount())).collect(Collectors.toList());
     }
 }

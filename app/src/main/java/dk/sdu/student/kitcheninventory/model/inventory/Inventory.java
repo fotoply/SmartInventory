@@ -19,7 +19,7 @@ public class Inventory {
         //TEST DATA BELOW
         addCompartment("Kød");
         addCompartment("Frugt");
-        addCompartment("Grøntsager");
+        addCompartment("Grøntsag");
         addCompartment("Drikkelse");
 
         Random random = new Random();
