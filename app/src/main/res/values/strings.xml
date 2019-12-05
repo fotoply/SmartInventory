@@ -4,7 +4,7 @@
     <string name="title_contents">Beholdning</string>
     <string name="title_checkin">Tjek in</string>
     <string name="title_recipes">Opskrifter</string>
-    <string name="title_shopping">Indkøb</string>
+    <string name="title_shopping">Indkøbsliste</string>
     <string name="ok">OK</string>
     <string name="grant_permission">Grant Permission</string>
     <string name="permission_camera">This app needs camera permission to scan barcode</string>
