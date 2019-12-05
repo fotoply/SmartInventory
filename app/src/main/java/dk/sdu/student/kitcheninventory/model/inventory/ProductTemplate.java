@@ -29,10 +29,10 @@ public class ProductTemplate implements Serializable {
     }
 
     public ProductTemplate(String name, String category, double expirationTime, double amount, String amountSuffix) {
-        this(name, category, expirationTime, amount, "", amountSuffix);
+        this(name, category, expirationTime, amount, amountSuffix, "");
     }
 
-    public ProductTemplate(String name, String category, double expirationTime, double amount, String barcode, String amountSuffix) {
+    public ProductTemplate(String name, String category, double expirationTime, double amount, String amountSuffix, String barcode) {
         this.name = name;
         this.category = category;
         this.expirationTime = expirationTime;

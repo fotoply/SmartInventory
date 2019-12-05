@@ -3,6 +3,7 @@ package dk.sdu.student.kitcheninventory.model.inventory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Inventory {
@@ -14,10 +15,23 @@ public class Inventory {
         instance = this;
         compartments = new ArrayList<>();
         DEFAULT_STORAGE_COMPARTMENT = new StorageCompartment("Mangler køkkenplads");
+
+        //TEST DATA BELOW
         addCompartment("Kød");
         addCompartment("Frugt");
         addCompartment("Grøntsager");
         addCompartment("Drikkelse");
+
+        Random random = new Random();
+
+        for (int i = 0; i < 20; i++) {
+            Product randomProduct = new Product();
+            randomProduct.applyTemplate(DefaultTemplates.getRandomProduct());
+            int variation = random.nextInt(3) - 1;
+            randomProduct.setExpirationInDays((int) (randomProduct.getDaysUntilExpiration() + variation));
+            addProduct(randomProduct);
+        }
+
     }
 
     public static Inventory getInstance() {
