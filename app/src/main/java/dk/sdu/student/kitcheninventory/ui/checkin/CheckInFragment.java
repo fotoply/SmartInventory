@@ -6,6 +6,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,12 +19,23 @@ import com.google.android.gms.vision.barcode.Barcode;
 import java.util.List;
 
 import dk.sdu.student.kitcheninventory.R;
+import dk.sdu.student.kitcheninventory.model.inventory.Inventory;
 import dk.sdu.student.kitcheninventory.ui.barcode.BarcodeReaderFragment;
 
 public class CheckInFragment extends Fragment implements BarcodeReaderFragment.BarcodeReaderListener {
 
     private CheckInViewModel notificationsViewModel;
     private boolean ready = true;
+
+    public static boolean isCheckIn() {
+        return checkIn;
+    }
+
+    public static void setCheckIn(boolean checkIn) {
+        CheckInFragment.checkIn = checkIn;
+    }
+
+    private static boolean checkIn = true;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,10 +56,16 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
         if(ready) {
             System.out.println("Commencing scan");
             ready = false;
-            CheckInAddProduct addProduct = CheckInAddProduct.newInstance(barcode.displayValue, barcode.rawValue);
-            addProduct.show(getFragmentManager(), "fragment_add_product");
-            getFragmentManager().executePendingTransactions();
-            addProduct.getDialog().setOnDismissListener(dialogInterface -> ready = true);
+            if(checkIn) {
+                CheckInAddProduct addProduct = CheckInAddProduct.newInstance(barcode.displayValue, barcode.rawValue);
+                addProduct.show(getFragmentManager(), "fragment_add_product");
+                getFragmentManager().executePendingTransactions();
+                addProduct.getDialog().setOnDismissListener(dialogInterface -> ready = true);
+            } else {
+                Inventory.getInstance().removeByBarcode(barcode.displayValue);
+                Toast.makeText(this.getContext(), "Produktet blev fjernet fra beholdning", Toast.LENGTH_LONG).show();
+                ready = true;
+            }
         }
     }
 

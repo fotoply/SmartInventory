@@ -83,11 +83,37 @@ public class Inventory {
     }
 
     public List<Product> getProductsByExpirationDate(int limit) {
-        List<Product> result = getAllProducts();
-        result.sort((o1, o2) -> (int) (o1.getDaysUntilExpiration() - o2.getDaysUntilExpiration()));
+        List<Product> result = getAllProductsByExpirationDate();
         if (result.size() < limit) {
             return result;
         }
         return result.subList(0, limit - 1);
+    }
+
+    private List<Product> getAllProductsByExpirationDate() {
+        List<Product> result = getAllProducts();
+        result.sort((o1, o2) -> (int) (o1.getDaysUntilExpiration() - o2.getDaysUntilExpiration()));
+        return result;
+    }
+
+    public void removeByBarcode(String barcode) {
+        final boolean[] done = {false};
+        compartments.forEach(storageCompartment -> {
+            if(done[0]) return;
+            storageCompartment.getProducts().forEach(product -> {
+                if(done[0]) return;
+                if(product.getBarcode().equals(barcode)) {
+                    storageCompartment.getProducts().remove(product);
+                    done[0] = true;
+                }
+            });
+        });
+        DEFAULT_STORAGE_COMPARTMENT.getProducts().forEach(product -> {
+            if(done[0]) return;
+            if(product.getBarcode().equals(barcode)) {
+                DEFAULT_STORAGE_COMPARTMENT.getProducts().remove(product);
+                done[0] = true;
+            }
+        });
     }
 }

@@ -58,6 +58,16 @@ public class Product implements Serializable {
     private double amount;
     private String amountSuffix;
 
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    private String barcode;
+
     public String getAmountSuffix() {
         return amountSuffix;
     }
@@ -73,6 +83,7 @@ public class Product implements Serializable {
         setExpirationInDays(expirationTime);
         this.amount = template.getAmount();
         this.amountSuffix = template.getAmountSuffix();
+        this.barcode = template.getBarcode();
         return this;
     }
 

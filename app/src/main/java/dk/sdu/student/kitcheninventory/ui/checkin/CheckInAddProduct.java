@@ -149,6 +149,8 @@ public class CheckInAddProduct extends DialogFragment {
             }
         });
 
+        createdProduct.setBarcode(((EditText) view.findViewById(R.id.barcodeEditText)).getText().toString());
+
         ((Button) view.findViewById(R.id.addProductButton)).setOnClickListener(v -> {
             Inventory.getInstance().addProduct(createdProduct);
             dismiss();
