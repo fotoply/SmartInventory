@@ -92,7 +92,15 @@ public class CheckInFragment extends Fragment implements BarcodeReaderFragment.B
             } else {
                 Inventory.getInstance().removeByBarcode(barcode.displayValue);
                 Toast.makeText(this.getContext(), "Produktet blev fjernet fra beholdning", Toast.LENGTH_LONG).show();
-                ready = true;
+                Thread thread = new Thread(() -> {
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    ready = true;
+                });
+                thread.start();
             }
         }
     }

@@ -97,23 +97,23 @@ public class Inventory {
     }
 
     public void removeByBarcode(String barcode) {
-        final boolean[] done = {false};
-        compartments.forEach(storageCompartment -> {
-            if(done[0]) return;
-            storageCompartment.getProducts().forEach(product -> {
-                if(done[0]) return;
-                if(product.getBarcode().equals(barcode)) {
+        boolean done = false;
+        for (StorageCompartment storageCompartment : compartments) {
+            if (done) continue;
+            for (Product product : storageCompartment.getProducts()) {
+                if (done) continue;
+                if (product.getBarcode().equals(barcode)) {
                     storageCompartment.getProducts().remove(product);
-                    done[0] = true;
+                    done = true;
                 }
-            });
-        });
-        DEFAULT_STORAGE_COMPARTMENT.getProducts().forEach(product -> {
-            if(done[0]) return;
-            if(product.getBarcode().equals(barcode)) {
-                DEFAULT_STORAGE_COMPARTMENT.getProducts().remove(product);
-                done[0] = true;
             }
-        });
+        }
+        for (Product product : DEFAULT_STORAGE_COMPARTMENT.getProducts()) {
+            if (done) continue;
+            if (product.getBarcode().equals(barcode)) {
+                DEFAULT_STORAGE_COMPARTMENT.getProducts().remove(product);
+                done = true;
+            }
+        }
     }
 }
