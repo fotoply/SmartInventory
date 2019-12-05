@@ -5,17 +5,50 @@
     android:orientation="vertical"
     android:weightSum="1.15">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/homeRecyclerViewTop"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.1"
+        android:gravity="bottom"
+        android:text="Udløber snart.."
+        android:textStyle="bold"
+        android:textSize="20dp"></TextView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeRecyclerViewTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"></androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Foreslåede retter til dig.."
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center_vertical"></TextView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRecyclerViewBottom"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_weight="0.55"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"></androidx.recyclerview.widget.RecyclerView>
 
     <Space
         android:layout_width="match_parent"

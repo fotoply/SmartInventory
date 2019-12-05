@@ -40,6 +40,7 @@ public class HomeRecyclerViewAdapterTop extends RecyclerView.Adapter<HomeRecycle
         Ingredient currentRecipe = data.get(position);
         holder.name.setText(currentRecipe.getProduct().getName());
         holder.icon.setImageResource(R.drawable.milk);
+        holder.expiration.setText(currentRecipe.getProduct().getFormattedExpiration());
     }
 
     @Override
@@ -58,12 +59,14 @@ public class HomeRecyclerViewAdapterTop extends RecyclerView.Adapter<HomeRecycle
     {
         public final TextView name;
         public final ImageView icon;
+        public final TextView expiration;
 
         public RecyclerViewHolder(View itemView)
         {
             super(itemView);
-            name = itemView.findViewById(R.id.nameTextView);
+            name = itemView.findViewById(R.id.productNameTextView);
             icon = itemView.findViewById(R.id.productIconImageView);
+            expiration = itemView.findViewById(R.id.expirationDateTextView);
             itemView.setOnClickListener(this);
         }
 
