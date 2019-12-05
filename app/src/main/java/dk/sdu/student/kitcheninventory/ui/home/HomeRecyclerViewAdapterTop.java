@@ -90,7 +90,7 @@ public class HomeRecyclerViewAdapterTop extends RecyclerView.Adapter<HomeRecycle
         @Override
         public void onClick(View v)
         {
-            Snackbar.make(v, "Item " + getPosition() + " has been deleted", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(v, "Vare " + getPosition() + " er blevet slettet", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             Delete(getPosition());
         }
     }

@@ -38,7 +38,7 @@ public class ShoppingRecyclerViewAdapter extends RecyclerView.Adapter<ShoppingRe
     {
         Ingredient currentRecipe = data.get(position);
         holder.name.setText(currentRecipe.getProduct().getName());
-        holder.year.setText(Double.toString(currentRecipe.getAmount()));
+        holder.amount.setText(Integer.toString((int)(currentRecipe.getAmount())) + " x ");
     }
 
     @Override
@@ -56,20 +56,20 @@ public class ShoppingRecyclerViewAdapter extends RecyclerView.Adapter<ShoppingRe
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         public final TextView name;
-        public final TextView year;
+        public final TextView amount;
 
         public RecyclerViewHolder(View itemView)
         {
             super(itemView);
-            name = itemView.findViewById(R.id.nameTextView);
-            year = itemView.findViewById(R.id.yearTextView);
+            name = itemView.findViewById(R.id.groceryNameTextView);
+            amount = itemView.findViewById(R.id.groceryAmountTextView);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v)
         {
-            Snackbar.make(v, "Item " + getPosition() + " has been deleted", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            Snackbar.make(v, "Vare " + getPosition() + " er blevet slettet", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             Delete(getPosition());
         }
     }
